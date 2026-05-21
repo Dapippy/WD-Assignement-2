@@ -1,0 +1,47 @@
+@media screen and (max-width: 767px) {
+    body {
+        background-color: green;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    body {
+        background-color: yellow;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body{
+        background-color: blue;
+        margin: 0;
+    }
+    
+    nav{
+        background-color: aqua;
+    }
+
+    nav ul {
+        display: flex;
+        padding-left: 0;
+        background-color: aqua;
+        list-style-type: none;
+    }
+
+    nav li {
+        flex: 1;
+    }
+
+    nav a {
+        display: block;
+        text-align: center;
+        color: aliceblue;
+        background-color: aqua;
+        text-decoration: none;
+        padding: 2em;
+    }
+
+    nav a#current{
+        background-color: purple;
+        padding: 2em;
+    }
+}
