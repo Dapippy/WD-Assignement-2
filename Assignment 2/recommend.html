@@ -1,40 +1,171 @@
 <!DOCTYPE html>
 <html lang = "en">
+    <!--start of head-->
     <head>
         <meta charset="utf-8" />
         <meta name = "description" content = "home for assignment 2 website" />
         <meta name = "keywords" content = "restauraunt registration" />
         <meta name = "author" content = "Aidan H" />
-
+        <!--links to javascript and css stylesheet-->
         <link href = "css/style.css" rel = "stylesheet" type = "text/css"/>
-        <script type = "text/javascript" src = "js/script.js"> </script>
+        <script src="js/jquery.min.js"></script>
+        <script src = "js/script.js"> </script>
 
         <title>Assignment 2 Website</title>
     </head>
+    <!--start of body-->
     <body>
+        <!--header with website title-->
         <header>
-
+            <h1>
+                Restaurant Reserver
+            </h1>
         </header>
-
+        <!--Navigation menu-->
         <nav>
-            <p>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href = "restaurants.html">restaurants</a></li>
-                    <li><a href = "recommend.html" id = "current">recommendation</a></li>
-                    <li><a href = "reservation.html">reservation</a></li>
-                    <li><a href = "register.html">register</a></li>
-                    <li><a href  = "bill.html">bill</a></li>
-                </ul>
-            </p>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href = "restaurants.html">restaurants</a></li>
+                <li><a href = "recommend.html" id = "current">recommendation</a></li>
+                <li><a href = "reservation.html">reservation</a></li>
+                <li><a href = "register.html">register</a></li>
+                <li><a href  = "bill.html">bill</a></li>
+            </ul>
         </nav>
-
+        <!--Main content-->
         <main>
+            <!--heading for restaurant search-->
+            <h2>
+                Recommendation Search
+            </h2>
+            <!--fieldset to hold the inputs, originally it was in a form but upon reflection if should not be one-->
+            <fieldset>
+                    <!--div element for every dietary preference checkbox-->
+                <div class="Checkbox" id="dietcheck">
+                    <p>
+                        <span id="Dietlabel">Dietary Preference</span>
 
+                        <input id="dtnone" type="checkbox" name="cbnone" value="none" class = "diet"/>
+                        <label for="dtnone">Any</label>
+
+                        <input id="dtvegan" type="checkbox" name="cbvegan" value="vegan" class = "diet"/>
+                        <label for="dtvegan">Vegan</label>
+
+                        <input id="dtvegetarian" type="checkbox" name="cbvegetar" value="vegetarian" class = "diet"/>
+                        <label for="dtvegetarian">Vegetarian </label>
+
+                        <input id="dthalal" type="checkbox" name="cbhalal" value="halal" class = "diet"/>
+                        <label for="dthalal">Halal</label>
+
+                        <input id="dtgluten" type="checkbox" name="cbgluten" value="gluten" class = "diet"/>
+                        <label for="dtgluten">Gluten Free</label>
+                    </p>
+                </div>
+                <!--line breaks are to give more space between each input class, realised I probably could have done it with css now-->
+                <br>
+                    <!--div element for every radio button for budgetary options-->
+                <div class="Radio">
+                    <span id="BudgetLabel">Budget</span>
+                    <input id="$250" type="radio" name="budget" value="250"/>
+                    <label for="$250">$250</label>
+
+                    <input id="$500" type="radio" name="budget" value="500"/>
+                    <label for="$500">$500</label>
+
+                    <input id="$750" type="radio" name="budget" value="750"/>
+                    <label for="$750">$750</label>
+                        
+                    <input id="$1000" type="radio" name="budget" value="1000"/>
+                    <label for="$1000">$1000</label>
+
+                    <input id="none" type="radio" name="budget" value="none"/>
+                    <label for="none">>$1000</label>
+                </div>
+                <br>
+                    <!--div for more checkboxes, this time the purpose of dining options-->
+                <div class="Checkbox">
+                    <span id="PurposeLabel">Purpose of Dining</span>
+
+                    <input id="cbTravel" type="checkbox" name="cbTravel" value="Holiday" />
+                    <label for="cbTravel">Holiday</label>
+
+                    <input id="cbBusiness" type="checkbox" name="cbBusiness" value="Business" />
+                    <label for="cbBusiness">Business</label>
+
+                    <input id="cbFamily" type="checkbox" name="cbFamily" value="Family" />
+                    <label for="cbFamily">Family</label>
+
+                    <input id="cbDate" type="checkbox" name="cbDate" value="Date" />
+                    <label for="cbDate">Date</label>
+                </div>
+            </fieldset>
+            <!--button that would have search using the values inputted, couldn't get it to work-->
+            <a href="#" id="recSearch" class="button">Search</a>
+
+                <!--list of all restaurants, on load every div inside the one of class searchList is set to hidden-->
+            <div class="searchList">
+                <!--Multiple div elements to stand in as the results for the restaurants found, I was going to experiment with data- attributes but didn't have time -->
+                <div class="ser ser1" data-Diet="gluten vegan" data-Budget="" data-Purpose="">
+                    <h3>
+                        Smiths and Daughters
+                    </h3>
+                    <a class="button">
+                        Order
+                    </a>
+                </div>
+
+                <div class="ser ser2" data-Diet="halal vegetarian vegan" data-Budget="" data-Purpose="">
+                    <h3>
+                        Docklands Den
+                    </h3>
+                    <a class="button">
+                        Order
+                    </a>
+                </div>
+
+                <div class="ser ser3"  data-Diet="" data-Budget="" data-Purpose="">
+                    <h3>
+                        Kaida Little Dragon
+                    </h3>
+                    <a class="button">
+                        Order
+                    </a>
+                </div>
+
+                <div class="ser ser4"  data-Diet="" data-Budget="" data-Purpose="">
+                    <h3>
+                        Sinjeon K street food
+                    </h3>
+                    <a class="button">
+                        Order
+                    </a>
+                </div>
+
+                <div class="ser ser5"  data-Diet="" data-Budget="" data-Purpose="">
+                    <h3>
+                        Her Bar and Restaurant
+                    </h3>
+                    <a class="button">
+                        Order
+                    </a>
+                </div>
+
+                <div class="ser ser6" data-Diet="" data-Budget="" data-Purpose="">
+                    <h3>
+                        NOMAD Melbourne
+                    </h3>
+                    <a class="button">
+                        Order
+                    </a>
+                </div>
+            </div>
+            
         </main>
-
+        <!--footer-->
         <footer>
-
+            <p>
+                Made By Aidan Hardess 2026
+            </p>
         </footer> 
     </body>
 

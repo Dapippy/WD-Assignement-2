@@ -1,40 +1,362 @@
 <!DOCTYPE html>
+<!--Html setup-->
 <html lang = "en">
+    <!--head element-->
     <head>
         <meta charset="utf-8" />
         <meta name = "description" content = "home for assignment 2 website" />
         <meta name = "keywords" content = "restauraunt registration" />
         <meta name = "author" content = "Aidan H" />
-
+        <!--links to css stylesheet and javascript-->
         <link href = "css/style.css" rel = "stylesheet" type = "text/css"/>
+        <script src="js/jquery.min.js"></script>
         <script type = "text/javascript" src = "js/script.js"> </script>
 
         <title>Assignment 2 Website</title>
     </head>
-    <body>
-        <header>
 
+    <!--Start of Body -->
+    <body>
+        <!--Header with website title-->
+        <header>
+            <h1>
+                Restaurant Reserver
+            </h1>
         </header>
 
+        <!--Navigation Menu-->
         <nav>
-            <p>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href = "restaurants.html" id = "current">restaurants</a></li>
-                    <li><a href = "recommend.html">recommendation</a></li>
-                    <li><a href = "reservation.html">reservation</a></li>
-                    <li><a href = "register.html">register</a></li>
-                    <li><a href  = "bill.html">bill</a></li>
-                </ul>
-            </p>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href = "restaurants.html" id = "current">restaurants</a></li>
+                <li><a href = "recommend.html">recommendation</a></li>
+                <li><a href = "reservation.html">reservation</a></li>
+                <li><a href = "register.html">register</a></li>
+                <li><a href  = "bill.html">bill</a></li>
+            </ul>
         </nav>
 
+        <!--Main body of Content-->
         <main>
+            <!--section with page title-->
+            <section>
+                <h2>
+                    Restaurant Seclection
+                </h2>
+            </section>
+            <!--section for a message to say I took info for actual restaurants to make this-->
+            <section>
+                <p>
+                    All restaurants in this list are one that are real and in melbourne, I do not know if I had to make up restaurants for this assignment so I just got information on some real ones
+                </p>
+            </section>
+            <!--List of all restaurants-->
+            <div id="resList">
+                <!--div element for a restaurant-->
+                <div class="res1 res">
+                    <!--label with the collapse button-->
+                    <div class="resLabel">
+                        <h3>
+                            <a class = "collapse" href = "#">[-]</a> Smiths and Daughters
+                        </h3>
+                    </div>
+                    <!--main body of the restaurant div element-->
+                    <div class="resInfo">
+                        <!--background image of resInfo-->
+                        <div class="background">
+                            <!--I was going to have the image act as a button to take user to reservation page but I don't have to learn how to do that-->
+                            <a href="#">
+                                <img src="images/Restaurant_1.jpg" alt="Smiths and Daughters" width="500" height="500" />
+                            </a>
+                        </div>
+                        <!--element for dietary options restaurant has-->
+                        <div class="dietTags">
+                            <p>
+                                Dietary Options:
+                            </p>
+                            <ul>
+                                <li>Vegan</li>
+                                <li>Gluten Free</li>
+                            </ul>
+                        </div>
+                        <!--element for text description of restaurant-->
+                        <div class="resDesc">
+                            <p>
+                                Vegan Restaurant located in CollingWood. Average Price per person: $35 - $50.
+                            </p>
+                            <aside> 
+                                <p>Main Dishes:</p>
+                                <ul>
+                                    <li>
+                                        Lasgagne Verde $29
+                                    </li>
+                                    <li>
+                                        Meatballs, soft polenta, pecorino $32
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+                <!--repeat the restaurant div elements 5 more times-->
+                <div class="res2 res">
+                    <div class="resLabel">
+                        <h3><a class = "collapse" href = "#">[-]</a> Docklands Den</h3>
+                    </div>
+                    
+                    <div class="resInfo">
+                        <div class="background">
+                            <a href="#">
+                            <img src="images/Restaurant_2.jpg" alt="Docklands Den" width="500" height="500"/>
+                            </a>
+                        </div>
 
+                        <div class="dietTags">
+                            <p>
+                                Dietary Options:
+                            </p>
+                            <ul>
+                                <li>
+                                    Halal
+                                </li>
+                                <li>
+                                    Vegetarian
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="resDesc">
+                               
+                            <p>
+                                Restaurant that serves Southern American food in Docklands. Average Price Per person: $75 
+                            </p>
+                            <aside>
+                                <p>Main Dishes:</p>
+                                <ul>
+                                    <li>
+                                        Slow-Cooked Lamb Shank $34
+                                    </li>
+                                    <li>
+                                        Slow Cooked Lamb Burger $20
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>  
+                    </div>
+                </div>
+                
+                <div class="res3 res">
+                    <div class="resLabel">
+                        <h3><a class = "collapse" href = "#">[-]</a> Kaida Little Dragon</h3>
+                    </div>
+                    
+                    <div class="resInfo">
+                        <div class="background">
+                            <img src="images/Restaurant_3.png" alt="Kaida Little Dragon" width="500" height="500" />
+                        </div>
+
+                        <div class="dietTags">
+                            <p>
+                                Dietary Options:
+                            </p>
+                            <ul>
+                                <li>
+                                    Gluten Free
+                                </li>
+                                <li>
+                                    Vegetarian
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="resDesc">
+                            <p>
+                                Japanese Restaurant in Hawthorn. Price per Person: $120
+                            </p>
+                            <aside>
+                                <p>
+                                    Main Dishes:
+                                </p>
+                                <ul>
+                                    <li>
+                                        Mayura Wagyu Flat Iron $95
+                                    </li>
+                                    <li>
+                                        Glacier 51 Miso Toothfish $79 
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                    
+                <div class="res4 res">
+                    <div class="resLabel">
+                        <h3><a class = "collapse" href = "#">[-]</a> Sinjeon K-Street Food</h3>
+                    </div>
+                    
+                    
+                    <div class="resInfo">
+                        <div class="background">
+                            <img src="images/Restaurant_4.jpg" alt="Sinjeon Restaurant" width="500" height="500"/>    
+                        </div>
+
+                        <div class="dietTags">
+                            <p>
+                                Dietary Options:
+                            </p>
+                            <ul>
+                                <li>
+                                    Halal
+                                </li>
+                                <li>
+                                    Vegan
+                                </li>
+                            </ul>
+                        </div>
+                           
+                        <div class="resDesc">
+                            <p>
+                                Korean Restaurant Chain. Average Price Per Person: $55 
+                            </p>
+                            <!--aside element was originally going to be collapsible and on the side, couldn't be bother to get it to work-->
+                            <aside>
+                                <p>Main Dishes:</p>
+                                <ul>
+                                    <li>
+                                        Kimbap $12
+                                    </li>
+                                    <li>
+                                        Kimchi Fried Rice $20
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+
+                    
+                <div class="res5 res" data-cuisinetype="Halal Vegan Vegetarian">
+                    <div class="resLabel">
+                        <h3><a class = "collapse" href = "#">[-]</a> HER Bar and Restaurant</h3>
+                    </div>
+                    
+                    <div class="resInfo">
+                        <div class="background">
+                            <img src="images/Restaurant_5.jpg" alt="Her Bar and Restaurant" width="500" height="500"/>
+                        </div>
+
+                        <div class="dietTags">
+                            <p>
+                                Dietary Options:
+                            </p>
+                            <ul>
+                                <li>
+                                    Gluten Free
+                                </li>
+                                <li>
+                                    Vegan
+                                </li>
+                            </ul>
+                        </div>
+                    
+                        <div class="resDesc">
+                            <p>
+                                A Bar and RoofTop Restaurant located within Melbourne CBD. Average Price Per Person: 
+                            </p>
+                            <aside>
+                                <p>Main Dishes:</p>
+                                <ul>
+                                    <li>
+                                        Drunken Beef Noodle $24
+                                    </li>
+                                    <li>
+                                        Barbeque T-Bone $57
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="res6 res">
+                    <div class="resLabel">
+                        <h3><a class = "collapse" href = "#">[-]</a> Nomad Melbourne</h3>
+                    </div>
+                
+                    <div class="resInfo">
+
+                        <div class="background">
+                            <img src="images/Restaurant_6.jpg" alt="NOMAD Melbourne Interior" width="500" height="500" />
+                        </div>
+
+                        <div class="dietTags">
+                            <p>
+                                Dietary Options:
+                            </p>
+                            <ul>
+                                <li>
+                                    none
+                                </li>
+                            </ul>
+                        </div>
+                            
+                        <div class="resDesc">
+                            <p>
+                                Restaurant specialising in Middle Eastern and other dishes from countries in the Mediterranian Sea.
+                                Any Dietary Preference must be stated to staff upon dining. Price Per Person: $350
+                            </p>
+                            <aside>
+                                <p>
+                                    Main Dishes:
+                                </p>
+                                <ul>
+                                    <li>
+                                        Wagyu Club Steak $175
+                                    </li>
+                                    <li>
+                                        Gundagai Lamb Rump $64
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>    
+                    </div>
+                
+                </div>
+            </div>
+            
         </main>
 
+        <!--Footer-->
         <footer>
+            <!--bibiography for images used-->
+            <p>
+                Photos used:
+            </p>
+            <p>
+                '[Restaurant_1.jpg]' [image], in Broadsheet, <a>Smith's & Daughters Fitzroy</a>, Broadsheet, viewed 30 May 2026, https://cdn.broadsheet.com.au/cache/fb/ff/fbff221b4da25fef17665af1cd2567b7.jpg 
+            </p>
+            <p>
+                '[Restaurant_2.jpg]' [image], In FoodPlacee, <a> Den Halal Restaurant | Menu, Hours & Reviews in Docklands VIC</a>, FoodPlacee, viewed 30 May 2026, https://static.foodplacee.com/58597-fp-albums-1.jpg 
+            </p>
+            <p>
+                '[Restaurant_3.png]' [image], In Kaida Little Dragon, <a>Home - Kaida Little Dragon - Japanese Restaurant</a>,Kaida Little Dragon, viewed 30 May 2026, https://kaidalittledragon.com.au/wp-content/uploads/2026/03/Kaida-front-06.png
+            </p>
+            <p>
 
+                '[Restaurant_4.jpg]' [image], In Sinjeon AU, <a>Franchise | SINJEON AU</a>, Sinjeon AU viewed 30 May 2026, https://static.wixstatic.com/media/78563f_9e14090073c940b9a20874834e87cd98~mv2.jpg/v1/fill/w_385,h_257,q_90,enc_avif,quality_auto/78563f_9e14090073c940b9a20874834e87cd98~mv2.jpg
+            </p>
+            <p>
+                '[Restaurant_5.jpg]' [image], In HQ Group, <a>Her Bar - Ground Floor  of HER Melbourne</a>, HQ Group, viewed 30 May 2026, https://images.prismic.io/herbar/b155f859-2108-4a05-9b5b-36480567a38e_HERBAR_05.webp?auto=compress,format&rect=0,0,1400,933&w=1200&h=800
+            </p>
+            <p>
+                '[Restaurant_6.jpg]' [image], In Nomad Melbourne, Nomad Melborune, viewed 30 May 2026, https://nomad.melbourne/wp-content/uploads/2022/11/Nomad_InteriorsMelb_05-1-1920x1281.jpg 
+            </p>
+            <p>
+                Made By Aidan Hardess 2026
+            </p>
         </footer>
     </body>
 

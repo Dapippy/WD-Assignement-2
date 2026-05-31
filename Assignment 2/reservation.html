@@ -5,36 +5,175 @@
         <meta name = "description" content = "home for assignment 2 website" />
         <meta name = "keywords" content = "restauraunt registration" />
         <meta name = "author" content = "Aidan H" />
-
+        <!--links to css stylesheet and javascript-->
         <link href = "css/style.css" rel = "stylesheet" type = "text/css"/>
-        <script type = "text/javascript" src = "js/script.js"> </script>
+        <link href="css/modal.css" rel="stylesheet" />
+        <script src="js/jquery.min.js"></script>
+        <script src = "js/script.js" type="text/javascript"></script>
 
         <title>Assignment 2 Website</title>
     </head>
     <body>
+        <!--header-->
         <header>
-
+            <h1>
+                Restaurant Reserver
+            </h1>
         </header>
 
+        <!--Navigation Menu-->
         <nav>
-            <p>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href = "restaurants.html">restaurants</a></li>
-                    <li><a href = "recommend.html">recommendation</a></li>
-                    <li><a href = "reservation.html" id = "current">reservation</a></li>
-                    <li><a href = "register.html">register</a></li>
-                    <li><a href  = "bill.html">bill</a></li>
-                </ul>
-            </p>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href = "restaurants.html">restaurants</a></li>
+                <li><a href = "recommend.html">recommendation</a></li>
+                <li><a href = "reservation.html" id = "current">reservation</a></li>
+                <li><a href = "register.html">register</a></li>
+                <li><a href  = "bill.html">bill</a></li>
+            </ul>
         </nav>
 
-        <main>
 
+        <!--Main Content-->
+        <main>
+            <!--Section that conatins heading for page-->
+            <section>
+                <h2>
+                    Reservation
+                </h2>
+            </section>
+            <!--section for reservation form-->
+            <section>
+                <!--reservation form-->
+                <form id="resForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php">
+                    <!--user info fieldset-->
+                    <fieldset>
+                        <legend>User Information</legend>
+                        <!--user name-->
+                        <div class="textinput">
+                            <label for="userID">Name:</label>
+                            <input id="userID" type="text" name="uName" />
+                        </div>
+                        <!--email-->
+                        <div class="textinput">
+                            <label for="uEmail">Email Address</label>
+                            <input id="uEmail" type="text" name="uEmail" placeholder="name@domain.com" />
+                        </div>
+                        <!--phone-->
+                        <div class="textinput">
+                            <label for="uPhone">Phone Number</label>
+                            <input id="uPhone" type="text" name="resPhone" />
+                        </div>
+
+                    </fieldset>
+                    <!--reservation detials fieldset-->
+                    <fieldset>
+                        <legend>Reservation Details</legend>
+                        <!--restaurant selection input-->
+                        <div class="RestaurantSelect">
+                            
+                            <label>Restaurant Selected:</label>
+                            <select id="resSelect" name="resSelect">
+                                <option id="placeholder" value="none" selected>please select</option>
+                                <option id="res1" value="res1">Smiths and Daughters</option>
+                                <option id="res2" value="res2">Dockland Den</option>
+                                <option id="res3" value="res3">Kaida Little Dragon</option>
+                                <option id="res4" value="res4">Sinjeon K stree food</option>
+                                <option id="res5" value="res5">Her bar and restaurant</option>
+                                <option id="res6" value="res6">NOMAD Melbourne</option>
+                            </select>
+                            
+                        </div>
+                        <!--date and time input-->
+                        <div class="textinput">
+                            <label for="resdate">Date</label>
+                            <input id="resdate" type="text" name="resdate" placeholder="dd/mm/yy" />
+
+                            <label for="resHour">Time:</label>
+                            <div class="time">
+                                <p>
+                                    <input  type = "text" id="resHour" placeholder="hour" name="resHour" />
+                                    :
+                                    <input type="text" id="resMin" placeholder="min" name="resMin" />
+                                    <select id="halfday" name="halfday">
+                                        <option value="select">Please Select</option>
+                                        <option value="am">AM</option>
+                                        <option value="pm">PM</option>
+                                    </select>
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <!--number of people being booked input-->
+                        <div class="textinput">
+                            <label for="resPeople">Number of People:</label>
+                            <input id="resPeople" type="text" name="nbPeople" /> 
+                        </div>
+                        <!--special requests-->
+                        <div class="textarea">
+                            <label for="specReq">Special Request:</label>
+                            <br/>
+                            <textarea id="specReq" rows="5" cols="50">
+
+                            </textarea>
+                        </div>
+                        
+
+                    </fieldset>
+
+                    <!--payment and billing fieldset-->
+                    <fieldset>
+                        <legend>Payment and Billing</legend>
+                        <!--payment deposit amount input-->
+                        <div class="textinput">
+                            <label for="paydepo">Deposit Amount:</label>
+                            <input id="paydepo" type="text" name="paydepo" />
+                        </div>
+                        <!--radio input for selecting payment-->
+                        <div class="Radio" id="selPay">
+                            <p>
+                                Select Payment Type:
+                            </p>
+                            <input id="rbvouch" type="radio" name="rbPay" value="vouch"/>
+                            <label for="rbvouch">Voucher</label>
+
+                            <input id="rbcredit" type="radio" name="rbPay" value="credit"/>
+                            <label for="rbcredit">Credit/Debit Card</label>
+                        </div>
+                        <!--voucher code input-->
+                        <div class="textinput" id="vouchinput">
+                            <label for="vouch">Voucher Code:</label>
+                            <input id="vouch" type="text" name="textvouch" />
+                        </div>
+                        <!--credit card input-->
+                        <div class="textinput" id="creditinput">
+                            <label for="credit">Credit/Debit Card Number:</label>
+                            <input id="credit" type="text" name="textcred" />
+                        </div>
+                        <!--checkbox to set billing email to previous entered email-->
+                        <div class="Checkbox">
+                            <label for="samecheck">Same as Account Email?</label>
+                            <input type="checkbox" id="samecheck" name="cbSame" />
+                        </div>
+                        <!--billing email input-->
+                        <div class="textinput" id="bill">
+                            <label for="billEmail">Billing Email Address</label>
+                            <input id="billEmail" type="text" name="billEmail" placeholder="name@domain.com"/>
+                        </div>
+                    </fieldset>
+                    <!--submit button-->
+                    <div class="buttoninput">
+			            <input type="submit" value="Test Register">
+		            </div>
+                </form>
+            </section>
         </main>
 
+        <!--Footer-->
         <footer>
-
+            <p>
+                Made By Aidan Hardess 2026
+            </p>
         </footer>
     </body>
 

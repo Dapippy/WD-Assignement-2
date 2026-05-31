@@ -1,21 +1,131 @@
+/*style for phones*/
 @media screen and (max-width: 767px) {
     body {
-        background-color: green;
+        background-color: beige;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header{
+        text-align: center;
+    }
+
+    nav ul {
+        display: flex;
+        padding-left: 0;
+        background-color: aqua;
+        list-style-type: none;
+    }
+
+    nav li {
+        flex: 1;
+    }
+
+    nav a {
+        display: block;
+        text-align: center;
+        color: aliceblue;
+        background-color: aqua;
+        text-decoration: none;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        font-size: 1em;
+        border: solid black 1px;
+    }
+
+    nav a#current{
+        background-color: purple;
+    }
+
+    .collapse {
+        margin-right: 20px;
+        background-color: rgba(206, 206, 206, 0.8);
+        border-radius: 5px;
+    }
+
+    .resInfo {
+        text-align: center;
+        background-color: rgba(0,0,0, 0.8);
+        border-radius: 5px;
+    }
+    .res ul{
+        list-style-type: none;
+    }
+    
+    
+    .resDesc, .dietTags{
+        text-align: center;
+        color: whitesmoke;
+    }
+
+    footer{
+        background-color: grey;
     }
 }
-
-@media screen and (min-width: 767px) and (max-width: 1024px) {
+/*tablet style*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     body {
         background-color: yellow;
     }
-}
 
+    header {
+        text-align: center;
+    }
+
+    nav ul {
+        display: flex;
+        padding-left: 0;
+        background-color: aqua;
+        list-style-type: none;
+    }
+
+    nav li {
+        flex: 1;
+    }
+
+    nav a {
+        display: block;
+        text-align: center;
+        color: aliceblue;
+        background-color: aqua;
+        text-decoration: none;
+        padding: 2em;
+    }
+
+    nav a#current{
+        background-color: purple;
+        padding: 2em;
+    }
+
+    .collapse {
+        margin-right: 20px;
+        background-color: rgba(206, 206, 206, 0.8);
+        border-radius: 5px;
+    }
+
+    .resDesc{
+        text-align: center;
+    }
+
+    footer{
+        background-color: grey;
+    }
+}
+/*pc style*/
 @media screen and (min-width: 1024px) {
     body{
-        background-color: blue;
+        background-color: beige;
         margin: 0;
+        text-align: center;
+        z-index: 1;
     }
     
+    header{
+        text-align: center;
+        color: black;
+    }
+
+
     nav{
         background-color: aqua;
     }
@@ -42,6 +152,76 @@
 
     nav a#current{
         background-color: purple;
-        padding: 2em;
+    }
+
+    #vouchinput, #creditinput{
+        display: none;
+    }
+
+    #resList {
+        display: flex;
+        position: relative;
+        
+        text-align: center;
+        flex-wrap: wrap;
+        gap: 1em;
+        justify-content: space-around;
+    }
+
+    .resInfo {
+        position: relative;
+
+    }
+
+    .resDesc {
+        display: grid; /*tried making it a grid thinking it would make having the aside element float to the right easier, it didn't*/
+        position: absolute; /*sets the element to be relative to the parent element (.resInfo)*/
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        grid-template-columns: 60%, 35%;
+        column-gap: 5%;
+    }    
+    
+    .resInfo .dietTags{
+        position: absolute;
+        margin-top: 0px;
+        top: 0.1em;
+        display: flex;
+    }
+
+    .dietTags p, .dietTags li, .resDesc{
+        background-color: rgba(0,0,0, 0.8);
+        color: white;
+        border-radius: 5px;
+        list-style-type: none;
+    }
+
+    .resDesc aside{
+        float: right;
+    }
+    
+    .dietTags ul{
+        list-style-type: none;
+        display: flex;
+        gap: 0.5em;
+    }
+    /*button class style*/
+    .collapse, .button {
+        margin-right: 20px;
+        background-color: rgba(206, 206, 206, 0.8);
+        border-radius: 5px;
+        padding: 5px;
+        text-decoration: none;
+        color: black;
+        border: solid black 1px;
+    }
+
+    footer{
+        background-color: grey;
+    }
+    /*sets each restaurant on searchlist to hidden*/    
+    .ser{
+        visibility: hidden;
     }
 }

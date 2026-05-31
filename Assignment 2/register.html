@@ -1,40 +1,139 @@
 <!DOCTYPE html>
 <html lang = "en">
+    <!--head-->
     <head>
         <meta charset="utf-8" />
         <meta name = "description" content = "home for assignment 2 website" />
         <meta name = "keywords" content = "restauraunt registration" />
         <meta name = "author" content = "Aidan H" />
-
+        <!--links to css stylesheet and javascript-->
         <link href = "css/style.css" rel = "stylesheet" type = "text/css"/>
-        <script type = "text/javascript" src = "js/script.js"> </script>
+        <link href="css/modal.css" rel="stylesheet" />
+        <script src="js/jquery.min.js"></script>
+        <script src = "js/script.js"> </script>
 
         <title>Assignment 2 Website</title>
     </head>
+    <!--body-->
     <body>
+        <!--header with website title-->
         <header>
-
+            <h1>
+                Restaurant Reserver
+            </h1>
         </header>
-
+        <!--navigation menu-->
         <nav>
-            <p>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href = "restaurants.html">restaurants</a></li>
-                    <li><a href = "recommend.html">recommendation</a></li>
-                    <li><a href = "reservation.html">reservation</a></li>
-                    <li><a href = "register.html" id = "current">register</a></li>
-                    <li><a href  = "bill.html">bill</a></li>
-                </ul>
-            </p>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href = "restaurants.html">restaurants</a></li>
+                <li><a href = "recommend.html">recommendation</a></li>
+                <li><a href = "reservation.html">reservation</a></li>
+                <li><a href = "register.html" id = "current">register</a></li>
+                <li><a href  = "bill.html">bill</a></li>
+            </ul>
         </nav>
-
+        <!--main content-->
         <main>
+            <!--section for page heading-->
+            <section>
+                <h2>Registration Page</h2>
+            </section>
+            <!--section for registration form-->
+            <section>
+                <!--the form itself-->
+                <form id="regForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php">
+                    <!--fieldset for account info-->
+                    <fieldset>
+                        <legend>Account Information</legend>
+                        <!--type user name-->
+                        <div class="textinput">
+                            <label for="userID">Username: </label>
+                            <input type="text" id="userID" name="id" />
+                        </div>
+                        <!--type password-->
+                        <div class="textinput">
+                            <label for="pwd1">Password: </label>
+                            <input type="text" id="pwd1" name="pwd1" />
+                        </div>
+                        <!--confirm password-->
+                        <div class="textinput">
+                            <label for="pwd2">Confirm Password: </label>
+                            <input type="text" id="pwd2" name="pwd2" />
+                        </div>
+                        <!--email input-->
+                        <div class="textinput">
+                            <label for="uEmail">Email Address</label>
+                            <input id="uEmail" type="text" name="rgEmail" placeholder="name@domain.com" />
+                        </div>
+                        <!--element for phone input-->
+                        <div class="textinput">
+                            <label for="uPhone">Phone Number</label>
+                            <input id="uPhone" type="text" name="rgPhone" />
+                        </div>
+                        <!--element for gender selection-->
+                        <div class="Radio">
+                            <span>Gender</span>
 
+                            <input id="rbMale" name="rbGender" type="radio" value="M" />
+                            <label for="rbMale">Male</label>
+
+                            <input id="rbFemale" name="rbGender" type="radio" value="F" />
+                            <label for="rbFemale">Female</label>
+
+                            <input id="rbNB" name="rbGender" type="radio" value="NB" />
+                            <label for="rbNB">Other</label>
+                        </div>
+                        <!--element for diet preference-->
+                        <div class="Checkbox" id="dietcheck">
+                            <p>
+                                <span id="Dietlabel">Dietary Preference</span>
+
+                                <input id="dtnone" type="checkbox" name="cbnone" value="none" class = "diet"/>
+                                <label for="dtnone">Any</label>
+
+                                <input id="dtvegan" type="checkbox" name="cbvegan" value="vegan" class = "diet"/>
+                                <label for="dtvegan">Vegan</label>
+
+                                <input id="dtvegetarian" type="checkbox" name="cbvegetar" value="vegetarian" class = "diet"/>
+                                <label for="dtvegetarian">Vegetarian </label>
+
+                                <input id="dthalal" type="checkbox" name="cbhalal" value="halal" class = "diet"/>
+                                <label for="dthalal">Halal</label>
+                                
+                                <input id="dtgluten" type="checkbox" name="cbgluten" value="gluten" class = "diet"/>
+                                <label for="dtgluten">Gluten Free</label>
+                            </p>
+                        </div>
+                        <!--element for country selection, in this case it only does continents because I didn't want to make up to 20 options to include most major countries-->
+                        <div class="select">
+                            <p>Region:
+                                <select name="uCountry" id="uctry">
+                                    <option value="none">Please Select</option>
+                                    <option value="oceania">Oceania</option>
+                                    <option value="namrc">North America</option>
+                                    <option value="samrc">South America</option>
+                                    <option value="erpe">Europe</option>
+                                    <option value="easia">East Asia</option>
+                                    <option value="wasie">West Asia</option>
+                                    <option value="afrc">Africa</option>
+                                </select>
+                            </p>
+                        </div>
+                    </fieldset>
+
+
+                    <div class="buttoninput">
+			            <input type="submit" value="Test Register" />
+		            </div>
+                </form>
+            </section>
         </main>
 
         <footer>
-
+            <p>
+                Made By Aidan Hardess 2026
+            </p>
         </footer>
     </body>
 

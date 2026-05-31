@@ -1,0 +1,33 @@
+.window {
+    display: none;
+    z-index: 3;
+    position: fixed;
+
+
+    top: 50%;
+    left: 50%;					/* the centre of the screen */
+	margin-top: -5em;			/* adjust the window by moving it up */
+	margin-left: -11em;			/* then moving it left to centre the window */
+	
+	background-color: lightblue;	/* uses a lightblue background */
+	border-radius: 15px;		/* create a rounded corner */
+	border: solid 1px blue;
+	box-shadow: 10px 10px 5px #888;
+	padding: 5px;				/* add spacing around the text */
+	width: 22em;
+	height: 10em;
+}
+
+#scrnOverlay{
+    z-index: 2;
+    visibility: hidden;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: grey;
+    opacity: 0.3;
+}
